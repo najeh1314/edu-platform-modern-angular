@@ -1,0 +1,70 @@
+{
+  "hash": "33235e98",
+  "configHash": "569a0d39",
+  "lockfileHash": "0028fd69",
+  "browserHash": "b7135069",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "63c74bda",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "4712db94",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "8d5950e5",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "b77f5977",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "99a977c3",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations.mjs",
+      "file": "@angular_platform-browser_animations.js",
+      "fileHash": "c7b245a8",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "7c1572a4",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-56WZVTLI": {
+      "file": "chunk-56WZVTLI.js"
+    },
+    "chunk-WETS2CZ2": {
+      "file": "chunk-WETS2CZ2.js"
+    },
+    "chunk-JKBMRRRE": {
+      "file": "chunk-JKBMRRRE.js"
+    },
+    "chunk-RKBTXCKC": {
+      "file": "chunk-RKBTXCKC.js"
+    },
+    "chunk-IMOQIPF6": {
+      "file": "chunk-IMOQIPF6.js"
+    },
+    "chunk-VNHCD2AU": {
+      "file": "chunk-VNHCD2AU.js"
+    }
+  }
+}

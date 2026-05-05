@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/angular/"
+title = "EduPlatform Angular 19"
+version = "1.0.0"
+id = "artifacts/edu-angular"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/angular/" ]
+localPort = 19622
+
+[services.development]
+run = "pnpm --filter @workspace/edu-angular run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/edu-angular", "run", "build" ]
+publicDir = "artifacts/edu-angular/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19622"
+BASE_PATH = "/angular/"
