@@ -72,7 +72,7 @@ export class EmailVerifyComponent implements OnInit {
       this.status.set('no-token');
       return;
     }
-    this.api.get<any>(`/auth/verify-email?token=${encodeURIComponent(token)}`).subscribe({
+    this.api.get<any>(`/spring/api/auth/verify-email?token=${encodeURIComponent(token)}`).subscribe({
       next: (res) => {
         if (res.token && res.user) {
           this.auth.login(res.token, res.user);

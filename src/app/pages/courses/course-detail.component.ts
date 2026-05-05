@@ -93,7 +93,7 @@ export class CourseDetailComponent implements OnInit {
   enrolling = signal(false);
 
   ngOnInit() {
-    this.api.get<any>(`/courses/${this.id}`).subscribe({
+    this.api.get<any>(`/spring/api/courses/${this.id}`).subscribe({
       next: (c) => { this.course.set(c); this.loading.set(false); },
       error: () => this.loading.set(false)
     });
@@ -101,7 +101,7 @@ export class CourseDetailComponent implements OnInit {
 
   enroll() {
     this.enrolling.set(true);
-    this.api.post<any>(`/courses/${this.id}/enroll`).subscribe({
+    this.api.post<any>(`/spring/api/courses/${this.id}/enroll`).subscribe({
       next: () => { this.toast.success('Inscrit au cours !'); this.enrolling.set(false); },
       error: (e) => { this.toast.error(e?.error?.message ?? 'Erreur'); this.enrolling.set(false); }
     });

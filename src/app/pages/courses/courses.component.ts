@@ -100,7 +100,7 @@ export class CoursesComponent implements OnInit {
   subjects = ['Maths', 'Français', 'Physique', 'Chimie', 'Histoire', 'Anglais', 'Arabe', 'SVT'];
 
   ngOnInit() {
-    this.api.get<any[]>('/courses').subscribe({
+    this.api.get<any[]>('/spring/api/courses').subscribe({
       next: (c) => { this.courses.set(c); this.applyFilter(); this.loading.set(false); },
       error: () => this.loading.set(false)
     });

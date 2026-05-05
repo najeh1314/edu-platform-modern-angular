@@ -301,7 +301,7 @@ export class RegisterComponent {
       payload['subjects'] = Array.from(this._selectedSubjects()).join(',');
     }
 
-    this.api.post<any>('/auth/register', payload).subscribe({
+    this.api.post<any>('/spring/api/auth/register', payload).subscribe({
       next: (res) => {
         this.loading.set(false);
         if (res.requiresVerification) {

@@ -36,28 +36,28 @@ export class NotificationService implements OnDestroy {
 
   load() {
     if (!this.auth.isAuthenticated()) return;
-    this.api.get<Notification[]>('/notifications').subscribe({
+    this.api.get<Notification[]>('/spring/api/notifications').subscribe({
       next: (list) => this.notifications.set(list ?? []),
       error: () => {}
     });
   }
 
   markRead(id: number) {
-    this.api.post<any>(`/notifications/${id}/read`).subscribe({
+    this.api.post<any>(`/spring/api/notifications/${id}/read`).subscribe({
       next: () => this.notifications.update(list =>
         list.map(n => n.id === id ? { ...n, isRead: true } : n))
     });
   }
 
   markAllRead() {
-    this.api.post<any>('/notifications/read-all').subscribe({
+    this.api.post<any>('/spring/api/notifications/read-all').subscribe({
       next: () => this.notifications.update(list =>
         list.map(n => ({ ...n, isRead: true })))
     });
   }
 
   delete(id: number) {
-    this.api.delete<any>(`/notifications/${id}`).subscribe({
+    this.api.delete<any>(`/spring/api/notifications/${id}`).subscribe({
       next: () => this.notifications.update(list => list.filter(n => n.id !== id))
     });
   }

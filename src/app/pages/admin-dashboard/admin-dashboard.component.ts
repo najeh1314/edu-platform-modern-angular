@@ -137,7 +137,7 @@ export class AdminDashboardComponent implements OnInit {
       { label: l === 'ar' ? 'دورات نشطة' : (l === 'en' ? 'Active courses' : 'Cours actifs'),        value: '…', color: 'text-orange-600 dark:text-orange-400' },
     ]);
 
-    this.api.get<any[]>('/users').subscribe({
+    this.api.get<any[]>('/spring/api/users').subscribe({
       next: (u) => {
         this.users.set(u);
         const teachers = u.filter((x: any) => x.role === 'teacher').length;
@@ -150,7 +150,7 @@ export class AdminDashboardComponent implements OnInit {
       },
       error: () => this.loadingUsers.set(false)
     });
-    this.api.get<any[]>('/sessions').subscribe({
+    this.api.get<any[]>('/spring/api/sessions').subscribe({
       next: (s) => {
         this.sessions.set(s);
         this.stats.update(st => st.map((x, i) => i === 2 ? { ...x, value: String(s.length) } : x));
@@ -158,7 +158,7 @@ export class AdminDashboardComponent implements OnInit {
       },
       error: () => this.loadingSessions.set(false)
     });
-    this.api.get<any[]>('/courses').subscribe({
+    this.api.get<any[]>('/spring/api/courses').subscribe({
       next: (c) => {
         this.courses.set(c);
         this.stats.update(st => st.map((x, i) => i === 3 ? { ...x, value: String(c.length) } : x));

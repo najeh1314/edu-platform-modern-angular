@@ -188,7 +188,7 @@ export class AdminNotificationsComponent implements OnInit {
   }
 
   loadUsers() {
-    this.api.get<BroadcastUser[]>('/notifications/admin/users').subscribe({
+    this.api.get<BroadcastUser[]>('/spring/api/notifications/admin/users').subscribe({
       next: (u) => this.users.set(u ?? []),
       error: () => {}
     });
@@ -196,7 +196,7 @@ export class AdminNotificationsComponent implements OnInit {
 
   loadHistory() {
     this.loadingHistory.set(true);
-    this.api.get<HistoryItem[]>('/notifications/admin/history').subscribe({
+    this.api.get<HistoryItem[]>('/spring/api/notifications/admin/history').subscribe({
       next: (h) => { this.history.set(h ?? []); this.loadingHistory.set(false); },
       error: () => this.loadingHistory.set(false)
     });

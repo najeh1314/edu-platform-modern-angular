@@ -134,7 +134,7 @@ export class TeacherDashboardComponent implements OnInit {
       next: (teachers) => {
         const me = teachers.find((t: any) => t.userId === userId);
         if (me) {
-          this.api.get<any[]>('/sessions', { teacherId: me.id }).subscribe({
+          this.api.get<any[]>('/spring/api/sessions', { teacherId: me.id }).subscribe({
             next: (s) => {
               this.sessions.set(s.filter((x: any) => x.status === 'SCHEDULED'));
               const monthly = s.filter((x: any) => new Date(x.startTime).getMonth() === new Date().getMonth()).length;
@@ -148,7 +148,7 @@ export class TeacherDashboardComponent implements OnInit {
             },
             error: () => this.loading.set(false)
           });
-          this.api.get<any[]>('/courses', { teacherId: me.id }).subscribe({
+          this.api.get<any[]>('/spring/api/courses', { teacherId: me.id }).subscribe({
             next: (c) => {
               this.courses.set(c);
               this.stats.update(st => st.map((item, i) => i === 2 ? { ...item, value: String(c.length) } : item));

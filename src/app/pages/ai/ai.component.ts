@@ -220,7 +220,7 @@ export class AiComponent implements OnInit {
   hwResult   = signal<any>(null);
 
   ngOnInit() {
-    this.api.post<any>('/ai/conversations', { mode: 'tutor', subject: 'Général', title: 'Session Angular' }).subscribe({
+    this.api.post<any>('/spring/api/ai/conversations', { mode: 'tutor', subject: 'Général', title: 'Session Angular' }).subscribe({
       next: (c) => this.convId.set(c.id)
     });
   }
@@ -272,7 +272,7 @@ export class AiComponent implements OnInit {
     this.generatingTest.set(true);
     this.generatedTest.set(null);
     const lang = this.lang.lang();
-    this.api.post<any>('/ai/generate-test', { ...this.testForm, language: lang }).subscribe({
+    this.api.post<any>('/spring/api/ai/generate-test', { ...this.testForm, language: lang }).subscribe({
       next: (t) => { this.generatedTest.set(t); this.generatingTest.set(false); },
       error: () => { this.toast.error(this.lang.t().generationError); this.generatingTest.set(false); }
     });
@@ -283,7 +283,7 @@ export class AiComponent implements OnInit {
     this.correcting.set(true);
     this.hwResult.set(null);
     const lang = this.lang.lang();
-    this.api.post<any>('/ai/correct-homework', { ...this.hwForm, language: lang }).subscribe({
+    this.api.post<any>('/spring/api/ai/correct-homework', { ...this.hwForm, language: lang }).subscribe({
       next: (r) => { this.hwResult.set(r); this.correcting.set(false); },
       error: () => { this.toast.error(this.lang.t().correctionError); this.correcting.set(false); }
     });

@@ -92,7 +92,7 @@ export class AdminUsersComponent implements OnInit {
   }
 
   load() {
-    this.api.get<any[]>('/users').subscribe({
+    this.api.get<any[]>('/spring/api/users').subscribe({
       next: (u) => { this.users.set(u); this.applyFilter(); this.loading.set(false); },
       error: () => this.loading.set(false)
     });

@@ -480,7 +480,7 @@ export class TeacherDetailComponent implements OnInit {
       startTime: start.toISOString(),
       endTime:   end.toISOString()
     };
-    this.api.post<any>('/sessions', payload).subscribe({
+    this.api.post<any>('/spring/api/sessions', payload).subscribe({
       next: () => {
         this.toast.success(this.lang.t().sessionCreated);
         this.booking.set(false);

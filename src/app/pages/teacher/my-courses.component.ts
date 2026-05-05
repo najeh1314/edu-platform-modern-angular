@@ -91,7 +91,7 @@ export class MyCoursesComponent implements OnInit {
       next: (teachers) => {
         const me = teachers.find((t: any) => t.userId === userId);
         if (me) {
-          this.api.get<any[]>('/courses', { teacherId: me.id }).subscribe({
+          this.api.get<any[]>('/spring/api/courses', { teacherId: me.id }).subscribe({
             next: (c) => { this.courses.set(c); this.loading.set(false); },
             error: () => this.loading.set(false)
           });

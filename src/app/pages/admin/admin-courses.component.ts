@@ -103,7 +103,7 @@ export class AdminCoursesComponent implements OnInit {
   ngOnInit() { this.load(); }
 
   load() {
-    this.api.get<any[]>('/courses').subscribe({
+    this.api.get<any[]>('/spring/api/courses').subscribe({
       next: (c) => { this.courses.set(c); this.applyFilter(); this.loading.set(false); },
       error: () => this.loading.set(false)
     });
@@ -132,8 +132,8 @@ export class AdminCoursesComponent implements OnInit {
     this.saving.set(true);
     const id = this.editingId();
     const req = id
-      ? this.api.put<any>(`/courses/${id}`, this.form)
-      : this.api.post<any>('/courses', this.form);
+      ? this.api.put<any>(`/spring/api/courses/${id}`, this.form)
+      : this.api.post<any>('/spring/api/courses', this.form);
 
     req.subscribe({
       next: (c) => {

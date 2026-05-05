@@ -122,7 +122,7 @@ export class StudentDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.updateStatLabels();
-    this.api.get<any[]>('/sessions').subscribe({
+    this.api.get<any[]>('/spring/api/sessions', { studentId: this.auth.user()?.id }).subscribe({
       next: (s) => {
         this.sessions.set(s);
         const monthly = s.filter(x => new Date(x.startTime).getMonth() === new Date().getMonth()).length;
@@ -136,7 +136,7 @@ export class StudentDashboardComponent implements OnInit {
       },
       error: () => this.loading.set(false)
     });
-    this.api.get<any[]>('/courses').subscribe({
+    this.api.get<any[]>('/spring/api/courses').subscribe({
       next: (c) => {
         this.courses.set(c);
         this.stats.update(st => st.map((item, i) => i === 2 ? { ...item, value: String(c.length) } : item));

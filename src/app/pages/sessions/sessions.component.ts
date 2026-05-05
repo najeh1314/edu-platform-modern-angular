@@ -340,7 +340,7 @@ export class SessionsComponent implements OnInit {
     if (this.filterStatus) params['status'] = this.filterStatus;
     if (this.filterFrom)   params['from']   = new Date(this.filterFrom).toISOString();
     if (this.filterTo)     params['to']     = new Date(this.filterTo).toISOString();
-    this.api.get<any[]>('/sessions', params).subscribe({
+    this.api.get<any[]>('/spring/api/sessions', params).subscribe({
       next: (s) => {
         let list = s ?? [];
         if (this.filterType === 'virtual') list = list.filter((x: any) => x.isVirtual);

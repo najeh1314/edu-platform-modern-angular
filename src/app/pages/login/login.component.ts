@@ -102,7 +102,7 @@ export class LoginComponent {
     }
     this.loading.set(true);
     this.error.set('');
-    this.api.post<{ token: string; user: any }>('/auth/login', this.form).subscribe({
+    this.api.post<{ token: string; user: any }>('/spring/api/auth/login', this.form).subscribe({
       next: (res) => {
         this.auth.login(res.token, res.user);
         this.toast.success(this.lang.t().loginSuccess);
