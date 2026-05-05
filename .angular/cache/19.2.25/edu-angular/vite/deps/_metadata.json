@@ -1,49 +1,49 @@
 {
-  "hash": "33235e98",
-  "configHash": "569a0d39",
-  "lockfileHash": "0028fd69",
-  "browserHash": "b7135069",
+  "hash": "dd45cf80",
+  "configHash": "b1ea2fec",
+  "lockfileHash": "73b2751a",
+  "browserHash": "b13d5840",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "63c74bda",
+      "fileHash": "f4159f8e",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "4712db94",
+      "fileHash": "765e94e4",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "8d5950e5",
+      "fileHash": "60ef3367",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "b77f5977",
+      "fileHash": "241c0e5b",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "99a977c3",
+      "fileHash": "01795c66",
       "needsInterop": false
     },
     "@angular/platform-browser/animations": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations.mjs",
       "file": "@angular_platform-browser_animations.js",
-      "fileHash": "c7b245a8",
+      "fileHash": "78a56e18",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "7c1572a4",
+      "fileHash": "28d4b68c",
       "needsInterop": false
     }
   },
